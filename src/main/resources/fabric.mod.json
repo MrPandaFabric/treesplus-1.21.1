@@ -20,6 +20,9 @@
 		],
 		"fabric-datagen": [
 			"com.mrpanda.net.treesplus.TreesplusDataGenerator"
+		],
+		"client": [
+			"com.mrpanda.net.treesplus.TreesplusClient"
 		]
 	},
 	"mixins": [
