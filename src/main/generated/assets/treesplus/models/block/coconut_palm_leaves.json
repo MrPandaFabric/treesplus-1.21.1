@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "treesplus:block/coconut_palm_leaves"
+  }
+}

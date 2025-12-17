@@ -1,4 +1,9 @@
 {
   "block.treesplus.coconut": "Coconut",
-  "block.treesplus.coconut_palm_leaves": "Coconut Palm Leaves"
+  "block.treesplus.coconut_palm_leaves": "Coconut Palm Leaves",
+
+
+  "itemgroup.treesplus.treesplus_blocks": "Treesplus Blocks",
+  "itemgroup.treesplus.treesplus_items": "Treesplus Items"
+
 }

@@ -1,6 +1,5 @@
 package com.mrpanda.net.treesplus.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -22,6 +21,7 @@ public class CoconutBlock extends Block {
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         if (!world.isClient) {
             FallingBlockEntity fallingBlockEntity = FallingBlockEntity.spawnFromBlock(world, pos, state);
+            fallingBlockEntity.setHurtEntities(2.0f, 40);
             fallingBlockEntity.dropItem = true;
             world.removeBlock(pos, false);
 

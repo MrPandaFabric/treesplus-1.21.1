@@ -1,6 +1,7 @@
 package com.mrpanda.net.treesplus.item;
 
 import com.mrpanda.net.treesplus.Treesplus;
+import com.mrpanda.net.treesplus.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
@@ -17,7 +18,7 @@ public class ModItemGroups {
             FabricItemGroup.builder().icon(() -> new ItemStack(Items.APPLE))
                     .displayName(Text.translatable("itemgroup.treesplus.treesplus_items"))
                     .entries((displayContext, entries) -> {
-
+                        entries.add(ModBlocks.COCONUT.asItem());
                     }).build());
 
     public static final ItemGroup TREESPLUS_BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP,
@@ -25,9 +26,10 @@ public class ModItemGroups {
             FabricItemGroup.builder().icon(() -> new ItemStack(Blocks.OAK_SAPLING))
                     .displayName(Text.translatable("itemgroup.treesplus.treesplus_blocks"))
                     .entries((displayContext, entries) -> {
+                        entries.add(ModBlocks.COCONUT);
+                        entries.add(ModBlocks.COCONUT_PALM_LEAVES);
 
-
-                    }).build());
+                        }).build());
 
 
     public static void registerItemGroups() {
