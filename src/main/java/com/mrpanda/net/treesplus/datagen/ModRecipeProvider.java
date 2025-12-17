@@ -1,5 +1,7 @@
 package com.mrpanda.net.treesplus.datagen;
 
+import com.mrpanda.net.treesplus.block.ModBlocks;
+import com.mrpanda.net.treesplus.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeExporter;
@@ -20,6 +22,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter exporter) {
-
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.HALF_COCONUT, 2)
+                .input(ModBlocks.COCONUT)
+                .criterion(hasItem(ModBlocks.COCONUT), conditionsFromItem(ModBlocks.COCONUT))
+                .offerTo(exporter);
     }
 }
