@@ -3,6 +3,7 @@ package com.mrpanda.net.treesplus;
 import com.mrpanda.net.treesplus.block.ModBlocks;
 import com.mrpanda.net.treesplus.item.ModItemGroups;
 import com.mrpanda.net.treesplus.item.ModItems;
+import com.mrpanda.net.treesplus.world.ModBiomeModifications;
 import com.mrpanda.net.treesplus.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
@@ -21,6 +22,6 @@ public class Treesplus implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModWorldGeneration.generateModWorldGen();
-
+		ModBiomeModifications.registerRemovals();
 		}
 	}
