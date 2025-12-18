@@ -16,17 +16,28 @@ public class CoconutBlock extends Block {
         super(settings);
     }
 
+    @Override
+    protected void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify) {
+        super.neighborUpdate(state, world, pos, sourceBlock, sourcePos, notify);
+        BlockPos above = pos.up();
+        if (world.isAir(above)) {
+            dropCoconut(world, pos, state);
+        }
+    }
 
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         if (!world.isClient) {
-            FallingBlockEntity fallingBlockEntity = FallingBlockEntity.spawnFromBlock(world, pos, state);
-            fallingBlockEntity.setHurtEntities(2.0f, 40);
-            fallingBlockEntity.dropItem = true;
-            world.removeBlock(pos, false);
-
+            dropCoconut(world, pos, state);
             return ActionResult.SUCCESS;
         }
         return ActionResult.CONSUME;
+    }
+
+    private void dropCoconut(World world, BlockPos pos, BlockState state) {
+        FallingBlockEntity fallingBlockEntity = FallingBlockEntity.spawnFromBlock(world, pos, state);
+        fallingBlockEntity.setHurtEntities(2.0f, 40);
+        fallingBlockEntity.dropItem = true;
+        world.removeBlock(pos, false);
     }
 }
