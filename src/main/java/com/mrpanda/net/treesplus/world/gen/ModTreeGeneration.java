@@ -8,6 +8,7 @@ import net.minecraft.world.gen.GenerationStep;
 
 public class ModTreeGeneration {
     public static void generateTrees() {
-
+       BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.BEACH, BiomeKeys.JUNGLE,BiomeKeys.SPARSE_JUNGLE,BiomeKeys.BAMBOO_JUNGLE),
+              GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.COCONUT_PALM_PLACED_KEY);
     }
 }

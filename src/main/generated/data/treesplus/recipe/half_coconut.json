@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "treesplus:coconut"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "treesplus:half_coconut"
+  }
+}

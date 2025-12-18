@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "treesplus:block/coconut_palm_sapling"
+  }
+}

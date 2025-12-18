@@ -1,2 +1,15 @@
-// 1.21.1	2025-12-17T20:22:31.3795816	Treesplus/Block Loot Tables
+// 1.21.1	2025-12-18T16:34:45.8583922	Treesplus/Block Loot Tables
+a9c8a89c356d0db24f7cc4e5041517f182e98e83 data\treesplus\loot_table\blocks\palm_stairs.json
+eaa5936f3480e34690a5600cef93b187a7fd0578 data\treesplus\loot_table\blocks\palm_fence.json
+ee0ca3e25c195dcfab4292895bc88182665f8b08 data\treesplus\loot_table\blocks\stripped_palm_log.json
+6a75c8ffb2cae01e4be9bda8484061dd0cdfd697 data\treesplus\loot_table\blocks\palm_log.json
+eb56fbb1e64ea2c2f64978675f5d84bc993b6807 data\treesplus\loot_table\blocks\palm_door.json
+5d2be9a814ccf18acbbee115d57853770fd68b6c data\treesplus\loot_table\blocks\palm_planks.json
+aa58382f5a6429860fdd69fb47c57f43f49f9351 data\treesplus\loot_table\blocks\palm_pressure_plate.json
+0d88d50475b398ecf051e2e5b3e964da4665bd74 data\treesplus\loot_table\blocks\stripped_palm_wood.json
+f233b4a9a260f3dae1d396f7a08924b1947b4f28 data\treesplus\loot_table\blocks\palm_trapdoor.json
 8f325baf1415863f0aee20e8d378d95c0d443de6 data\treesplus\loot_table\blocks\coconut.json
+6780891fce8ceb09429217f390585054d65f97a2 data\treesplus\loot_table\blocks\palm_fence_gate.json
+33b173e3e4b72d57b9dbe99501810c062a82c47e data\treesplus\loot_table\blocks\palm_slab.json
+d35fc2cc346edec8976ddbd998882a23780a7194 data\treesplus\loot_table\blocks\palm_wood.json
+48d0aad1c9b01e5da85f3589ea03b6baffa51f8f data\treesplus\loot_table\blocks\palm_button.json

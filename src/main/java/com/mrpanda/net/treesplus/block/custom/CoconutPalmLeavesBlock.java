@@ -16,7 +16,7 @@ public class CoconutPalmLeavesBlock extends LeavesBlock {
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         super.randomTick(state, world, pos, random);
 
-        if (!state.get(PERSISTENT) && random.nextInt(30) == 0) {
+        if (!state.get(PERSISTENT) && state.get(DISTANCE) == 1 && random.nextInt(30) == 0) {
             BlockPos below = pos.down();
             if (world.isAir(below)) {
                 world.setBlockState(below, ModBlocks.COCONUT.getDefaultState());

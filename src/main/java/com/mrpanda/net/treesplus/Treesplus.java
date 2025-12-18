@@ -22,6 +22,5 @@ public class Treesplus implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModWorldGeneration.generateModWorldGen();
 
-
 		}
 	}

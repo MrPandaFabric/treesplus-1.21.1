@@ -26,6 +26,21 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
         this.addDrop(ModBlocks.COCONUT);
+        addDrop(ModBlocks.PALM_DOOR, doorDrops(ModBlocks.PALM_DOOR));
+        addDrop(ModBlocks.PALM_TRAPDOOR);
+        addDrop(ModBlocks.PALM_LOG);
+        addDrop(ModBlocks.STRIPPED_PALM_LOG);
+        addDrop(ModBlocks.PALM_WOOD);
+        addDrop(ModBlocks.STRIPPED_PALM_WOOD);
+        addDrop(ModBlocks.PALM_PLANKS);
+        addDrop(ModBlocks.PALM_STAIRS);
+        addDrop(ModBlocks.PALM_SLAB);
+        addDrop(ModBlocks.PALM_FENCE);
+        addDrop(ModBlocks.PALM_FENCE_GATE);
+        addDrop(ModBlocks.PALM_BUTTON);
+        addDrop(ModBlocks.PALM_PRESSURE_PLATE);
+
+
     }
 
     public LootTable.Builder multipleOreDrops(Block drop, Item item, float minDrops, float maxDrops) {

@@ -28,6 +28,20 @@ public class ModItemGroups {
                     .entries((displayContext, entries) -> {
                         entries.add(ModBlocks.COCONUT);
                         entries.add(ModBlocks.COCONUT_PALM_LEAVES);
+                        entries.add(ModBlocks.PALM_PLANKS);
+                        entries.add(ModBlocks.PALM_WOOD);
+                        entries.add(ModBlocks.STRIPPED_PALM_WOOD);
+                        entries.add(ModBlocks.PALM_LOG);
+                        entries.add(ModBlocks.STRIPPED_PALM_LOG);
+                        entries.add(ModBlocks.PALM_STAIRS);
+                        entries.add(ModBlocks.PALM_SLAB);
+                        entries.add(ModBlocks.PALM_FENCE);
+                        entries.add(ModBlocks.PALM_FENCE_GATE);
+                        entries.add(ModBlocks.PALM_BUTTON);
+                        entries.add(ModBlocks.PALM_PRESSURE_PLATE);
+                        entries.add(ModBlocks.PALM_DOOR);
+                        entries.add(ModBlocks.PALM_TRAPDOOR);
+
 
                         }).build());
 

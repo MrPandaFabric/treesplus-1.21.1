@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "treesplus:block/palm_planks",
+    "side": "treesplus:block/palm_planks",
+    "top": "treesplus:block/palm_planks"
+  }
+}
