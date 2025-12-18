@@ -2,6 +2,7 @@ package com.mrpanda.net.treesplus.world;
 
 import com.mrpanda.net.treesplus.Treesplus;
 import com.mrpanda.net.treesplus.block.ModBlocks;
+import com.mrpanda.net.treesplus.world.tree.PalmFoliagePlacer;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -22,7 +23,7 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.of(ModBlocks.PALM_LOG),
                 new StraightTrunkPlacer(5, 2, 1),
                 BlockStateProvider.of(ModBlocks.COCONUT_PALM_LEAVES),
-                new BlobFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(1),3),
+                new PalmFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(0)),
 
                 new TwoLayersFeatureSize(1, 0, 1)
         ).build());

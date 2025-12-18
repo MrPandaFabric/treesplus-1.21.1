@@ -1,5 +1,6 @@
 package com.mrpanda.net.treesplus.datagen;
 
+import com.mrpanda.net.treesplus.block.ModBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
@@ -19,5 +20,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 ;
+        getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.PALM_LOG)
+                .add(ModBlocks.PALM_WOOD)
+                .add(ModBlocks.STRIPPED_PALM_LOG)
+                .add(ModBlocks.STRIPPED_PALM_WOOD);
+
     }
 }

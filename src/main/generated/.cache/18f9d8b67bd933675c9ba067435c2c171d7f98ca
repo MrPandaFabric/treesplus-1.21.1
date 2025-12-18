@@ -1,3 +1,4 @@
-// 1.21.1	2025-12-18T16:34:45.8573922	Treesplus/Tags for minecraft:block
+// 1.21.1	2025-12-18T21:29:42.6966936	Treesplus/Tags for minecraft:block
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\minecraft\tags\block\needs_iron_tool.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\minecraft\tags\block\mineable\pickaxe.json
+99041bac161d8a0ec60c7d07d78f6cb968f3557d data\minecraft\tags\block\logs_that_burn.json
