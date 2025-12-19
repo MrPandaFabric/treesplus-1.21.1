@@ -1,6 +1,7 @@
 package com.mrpanda.net.treesplus;
 
 import com.mrpanda.net.treesplus.block.ModBlocks;
+import com.mrpanda.net.treesplus.entity.ModBoats;
 import com.mrpanda.net.treesplus.item.ModItemGroups;
 import com.mrpanda.net.treesplus.item.ModItems;
 import com.mrpanda.net.treesplus.world.ModBiomeModifications;
@@ -25,5 +26,6 @@ public class Treesplus implements ModInitializer {
 		ModFoliagePlacerTypes.register();
 		ModWorldGeneration.generateModWorldGen();
 		ModBiomeModifications.registerRemovals();
+		ModBoats.registerBoats();
 		}
 	}
