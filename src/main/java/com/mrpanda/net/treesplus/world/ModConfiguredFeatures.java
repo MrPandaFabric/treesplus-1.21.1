@@ -14,11 +14,21 @@ import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
 public class ModConfiguredFeatures {
-    public static final RegistryKey<ConfiguredFeature<?, ?>> COCONUT_PALM_KEY = registerKey("coconut_palm");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> COCONUT_PALM_JUNGLE_KEY = registerKey("coconut_palm_jungle");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> COCONUT_PALM_BEACH_KEY = registerKey("coconut_beach_jungle");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
 
-        register(context, COCONUT_PALM_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+        register(context, COCONUT_PALM_JUNGLE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.PALM_LOG),
+                new StraightTrunkPlacer(9, 3, 1),
+                BlockStateProvider.of(ModBlocks.COCONUT_PALM_LEAVES),
+                new PalmFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(0)),
+
+                new TwoLayersFeatureSize(1, 0, 1)
+        ).build());
+
+        register(context, COCONUT_PALM_BEACH_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.PALM_LOG),
                 new StraightTrunkPlacer(5, 2, 1),
                 BlockStateProvider.of(ModBlocks.COCONUT_PALM_LEAVES),

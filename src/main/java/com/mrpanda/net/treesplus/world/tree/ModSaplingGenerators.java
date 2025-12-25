@@ -9,5 +9,5 @@ import java.util.Optional;
 
 public class ModSaplingGenerators {
     public static final SaplingGenerator COCONUT_PALM = new SaplingGenerator(Treesplus.MOD_ID + ":coconut_palm",
-            Optional.empty(), Optional.of(ModConfiguredFeatures.COCONUT_PALM_KEY), Optional.empty());
+            Optional.empty(), Optional.of(ModConfiguredFeatures.COCONUT_PALM_JUNGLE_KEY), Optional.empty());
 }

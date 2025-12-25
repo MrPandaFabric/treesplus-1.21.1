@@ -1,3 +1,5 @@
-// 1.21.1	2025-12-25T16:52:33.6760921	Treesplus/
-c85695550076b6926f464c6bfcf8bdea3358da50 data\treesplus\worldgen\configured_feature\coconut_palm.json
-d52d1b9533cdf10d49b959b8fa2c3245e10f4b06 data\treesplus\worldgen\placed_feature\coconut_palm_placed.json
+// 1.21.1	2025-12-25T17:12:14.9321032	Treesplus/
+8ae56ce0469ad520389abe35026860f3c49a92fe data\treesplus\worldgen\placed_feature\coconut_palm_jungle_placed.json
+8ae56ce0469ad520389abe35026860f3c49a92fe data\treesplus\worldgen\placed_feature\coconut_palm_beach_placed.json
+45336823cc0b200f3201d0d2e99b81f78f3a5bfe data\treesplus\worldgen\configured_feature\coconut_palm_jungle.json
+c85695550076b6926f464c6bfcf8bdea3358da50 data\treesplus\worldgen\configured_feature\coconut_beach_jungle.json
