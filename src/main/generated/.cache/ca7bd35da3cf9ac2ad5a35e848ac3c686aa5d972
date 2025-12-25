@@ -1,4 +1,4 @@
-// 1.21.1	2025-12-25T17:37:33.6839298	Treesplus/Model Definitions
+// 1.21.1	2025-12-25T17:53:51.7774453	Treesplus/Model Definitions
 33d756fed99845e1fbfdd87ed6e459eadcc9ad85 assets\treesplus\models\item\palm_log.json
 f1a6de70cf7ae9c7ed74de110815954ed1cbd602 assets\treesplus\models\block\palm_fence_post.json
 01eece629b81557b3de718151a717f932847f35b assets\treesplus\models\block\palm_fence_gate_wall.json
@@ -28,8 +28,8 @@ f5ec304b8889078713e1cf508b27a1babd66a041 assets\treesplus\blockstates\stripped_p
 8c791f12e285cad000f62bb5e232bf93b9c97f07 assets\treesplus\models\block\palm_fence_inventory.json
 1ba519582a3655cc9e84635fc6e9db5a7aaf05a7 assets\treesplus\models\item\palm_fence.json
 9704c248102ae310cc0a92b54b9e11a59e3ac45e assets\treesplus\models\block\coconut_palm_leaves.json
-dc1048df39cf3cc497e73be01044532e14367e62 assets\treesplus\models\block\stripped_palm_wood.json
 83e7e3a98dd91268d50ea31c216067594edffed0 assets\treesplus\blockstates\palm_log.json
+dc1048df39cf3cc497e73be01044532e14367e62 assets\treesplus\models\block\stripped_palm_wood.json
 4c0adc891b3a43e8fb65d9bacafc5fc7547e2b6d assets\treesplus\models\item\palm_fence_gate.json
 a483b6834d199ba1196ea5d2abb07de2ac495eb3 assets\treesplus\models\block\palm_fence_gate_wall_open.json
 83961358db79aea92e54075b0b002c38c192edb2 assets\treesplus\models\block\stripped_palm_log.json

@@ -10,7 +10,7 @@ import net.minecraft.util.Identifier;
 
 public class ModItems {
     public static final Item HALF_COCONUT = registerItem("half_coconut",
-            new Item(new Item.Settings()));
+            new Item(new Item.Settings().food(ModFoodComponents.HALF_COCONUT)));
 
 
     public static final Item PALM_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.PALM_BOAT_ID, ModBoats.PALM_BOAT_KEY, false);

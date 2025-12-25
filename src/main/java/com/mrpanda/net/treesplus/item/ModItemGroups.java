@@ -19,6 +19,11 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.treesplus.treesplus_items"))
                     .entries((displayContext, entries) -> {
                         entries.add(ModBlocks.COCONUT.asItem());
+                        entries.add(ModBlocks.COCONUT_PALM_SAPLING.asItem());
+                        entries.add(ModItems.PALM_BOAT);
+                        entries.add(ModItems.PALM_CHEST_BOAT);
+                        entries.add(ModItems.HALF_COCONUT);
+
                     }).build());
 
     public static final ItemGroup TREESPLUS_BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP,
@@ -41,6 +46,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.PALM_PRESSURE_PLATE);
                         entries.add(ModBlocks.PALM_DOOR);
                         entries.add(ModBlocks.PALM_TRAPDOOR);
+                        entries.add(ModBlocks.COCONUT_PALM_SAPLING);
 
 
                         }).build());
