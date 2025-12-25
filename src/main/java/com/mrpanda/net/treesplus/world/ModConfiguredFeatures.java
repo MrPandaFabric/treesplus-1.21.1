@@ -23,21 +23,18 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.of(ModBlocks.PALM_LOG),
                 new StraightTrunkPlacer(9, 3, 1),
                 BlockStateProvider.of(ModBlocks.COCONUT_PALM_LEAVES),
-                new PalmFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(0)),
-
+                new PalmFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(-1)),
                 new TwoLayersFeatureSize(1, 0, 1)
-        ).build());
+        ).ignoreVines().build());
 
         register(context, COCONUT_PALM_BEACH_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.PALM_LOG),
                 new StraightTrunkPlacer(5, 2, 1),
                 BlockStateProvider.of(ModBlocks.COCONUT_PALM_LEAVES),
-                new PalmFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(0)),
-
+                new PalmFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(-1)),
                 new TwoLayersFeatureSize(1, 0, 1)
-        ).build());
+        ).ignoreVines().build());
     }
-
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {
         return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Identifier.of(Treesplus.MOD_ID, name));
