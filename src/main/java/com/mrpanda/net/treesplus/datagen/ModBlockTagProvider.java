@@ -20,13 +20,23 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 ;
+
         getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
                 .add(ModBlocks.PALM_LOG)
                 .add(ModBlocks.PALM_WOOD)
                 .add(ModBlocks.STRIPPED_PALM_LOG)
                 .add(ModBlocks.STRIPPED_PALM_WOOD);
+
         getOrCreateTagBuilder(BlockTags.LEAVES)
                 .add(ModBlocks.COCONUT_PALM_LEAVES);
+
+        getOrCreateTagBuilder(BlockTags.LOGS)
+                .add(ModBlocks.PALM_LOG)
+                .add(ModBlocks.STRIPPED_PALM_LOG);
+
+        getOrCreateTagBuilder(BlockTags.OVERWORLD_NATURAL_LOGS)
+                .add(ModBlocks.PALM_LOG)
+                .add(ModBlocks.STRIPPED_PALM_LOG);
 
     }
 }

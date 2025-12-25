@@ -1,9 +1,8 @@
-package com.mrpanda.net.treesplus.world.tree;
+package com.mrpanda.net.treesplus.world.tree.foliageplacer;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.LeavesBlock;
+import com.mrpanda.net.treesplus.world.tree.ModFoliagePlacerTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.intprovider.IntProvider;

@@ -2,7 +2,7 @@ package com.mrpanda.net.treesplus.world;
 
 import com.mrpanda.net.treesplus.Treesplus;
 import com.mrpanda.net.treesplus.block.ModBlocks;
-import com.mrpanda.net.treesplus.world.tree.PalmFoliagePlacer;
+import com.mrpanda.net.treesplus.world.tree.foliageplacer.PalmFoliagePlacer;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -10,7 +10,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
-import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
