@@ -15,7 +15,7 @@ import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
 public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> COCONUT_PALM_JUNGLE_KEY = registerKey("coconut_palm_jungle");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> COCONUT_PALM_BEACH_KEY = registerKey("coconut_beach_jungle");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> COCONUT_PALM_BEACH_KEY = registerKey("coconut_palm_beach");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
 

@@ -27,7 +27,7 @@ public class ModPlacedFeatures {
                         PlacedFeatures.createCountExtraModifier(0, 0.1f, 2),
                         ModBlocks.COCONUT_PALM_SAPLING));
 
-        register(context, COCONUT_PALM_BEACH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.COCONUT_PALM_JUNGLE_KEY),
+        register(context, COCONUT_PALM_BEACH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.COCONUT_PALM_BEACH_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         PlacedFeatures.createCountExtraModifier(0, 0.1f, 2),
                         ModBlocks.COCONUT_PALM_SAPLING));
