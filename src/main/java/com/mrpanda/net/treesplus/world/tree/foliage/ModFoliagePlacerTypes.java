@@ -1,7 +1,7 @@
-package com.mrpanda.net.treesplus.world.tree;
+package com.mrpanda.net.treesplus.world.tree.foliage;
 
 import com.mrpanda.net.treesplus.Treesplus;
-import com.mrpanda.net.treesplus.world.tree.foliageplacer.PalmFoliagePlacer;
+import com.mrpanda.net.treesplus.world.tree.foliage.foliageplacer.PalmFoliagePlacer;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;

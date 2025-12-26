@@ -2,16 +2,22 @@ package com.mrpanda.net.treesplus.world;
 
 import com.mrpanda.net.treesplus.Treesplus;
 import com.mrpanda.net.treesplus.block.ModBlocks;
-import com.mrpanda.net.treesplus.world.tree.foliageplacer.PalmFoliagePlacer;
+import com.mrpanda.net.treesplus.util.ModTags;
+import com.mrpanda.net.treesplus.world.tree.foliage.foliageplacer.PalmFoliagePlacer;
+import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
+import net.minecraft.util.math.intprovider.IntProvider;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.trunk.BendingTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
+import net.minecraft.world.gen.trunk.TrunkPlacer;
 
 public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> COCONUT_PALM_JUNGLE_KEY = registerKey("coconut_palm_jungle");
@@ -23,15 +29,15 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.of(ModBlocks.PALM_LOG),
                 new StraightTrunkPlacer(9, 3, 1),
                 BlockStateProvider.of(ModBlocks.COCONUT_PALM_LEAVES),
-                new PalmFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(-1)),
+                new PalmFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(0)),
                 new TwoLayersFeatureSize(1, 0, 1)
         ).ignoreVines().build());
 
         register(context, COCONUT_PALM_BEACH_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.PALM_LOG),
-                new StraightTrunkPlacer(5, 2, 1),
+                new BendingTrunkPlacer(5, 2, 1, 5, ConstantIntProvider.create(4)),
                 BlockStateProvider.of(ModBlocks.COCONUT_PALM_LEAVES),
-                new PalmFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(-1)),
+                new PalmFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(0)),
                 new TwoLayersFeatureSize(1, 0, 1)
         ).ignoreVines().build());
     }

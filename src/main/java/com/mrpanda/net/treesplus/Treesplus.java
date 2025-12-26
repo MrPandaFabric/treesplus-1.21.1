@@ -6,7 +6,7 @@ import com.mrpanda.net.treesplus.item.ModItemGroups;
 import com.mrpanda.net.treesplus.item.ModItems;
 import com.mrpanda.net.treesplus.world.ModBiomeModifications;
 import com.mrpanda.net.treesplus.world.gen.ModWorldGeneration;
-import com.mrpanda.net.treesplus.world.tree.ModFoliagePlacerTypes;
+import com.mrpanda.net.treesplus.world.tree.foliage.ModFoliagePlacerTypes;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
