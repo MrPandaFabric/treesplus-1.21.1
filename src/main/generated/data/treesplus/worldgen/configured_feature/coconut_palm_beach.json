@@ -19,8 +19,7 @@
         "Name": "treesplus:coconut_palm_leaves",
         "Properties": {
           "distance": "7",
-          "persistent": "false",
-          "waterlogged": "false"
+          "persistent": "false"
         }
       }
     },

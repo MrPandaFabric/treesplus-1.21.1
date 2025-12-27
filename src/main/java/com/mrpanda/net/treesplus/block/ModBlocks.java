@@ -18,7 +18,17 @@ public class ModBlocks {
             new CoconutBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD).strength(0.5f).sounds(BlockSoundGroup.WOOD).nonOpaque()));
 
     public static final Block COCONUT_PALM_LEAVES = registerBlock("coconut_palm_leaves",
-            new CoconutPalmLeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).ticksRandomly().nonOpaque().strength(0.2f)));
+            new CoconutPalmLeavesBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.DARK_GREEN)
+                    .strength(0.2F)
+                    .ticksRandomly()
+                    .nonOpaque()
+                    .sounds(BlockSoundGroup.GRASS)
+                    .allowsSpawning((state, world, pos, type) -> false)
+                    .suffocates((state, world, pos) -> false)
+                    .blockVision((state, world, pos) -> false)
+            ));
+
 
     public static final Block PALM_PLANKS = registerBlock("palm_planks",
             new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)));

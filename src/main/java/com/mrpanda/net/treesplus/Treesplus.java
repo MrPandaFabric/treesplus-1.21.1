@@ -4,6 +4,7 @@ import com.mrpanda.net.treesplus.block.ModBlocks;
 import com.mrpanda.net.treesplus.entity.ModBoats;
 import com.mrpanda.net.treesplus.item.ModItemGroups;
 import com.mrpanda.net.treesplus.item.ModItems;
+import com.mrpanda.net.treesplus.util.ModFlammableBlocks;
 import com.mrpanda.net.treesplus.world.ModBiomeModifications;
 import com.mrpanda.net.treesplus.world.gen.ModWorldGeneration;
 import com.mrpanda.net.treesplus.world.tree.foliage.ModFoliagePlacerTypes;
@@ -27,5 +28,6 @@ public class Treesplus implements ModInitializer {
 		ModWorldGeneration.generateModWorldGen();
 		ModBiomeModifications.registerRemovals();
 		ModBoats.registerBoats();
+		ModFlammableBlocks.registerFlammableBlocks();
 		}
 	}

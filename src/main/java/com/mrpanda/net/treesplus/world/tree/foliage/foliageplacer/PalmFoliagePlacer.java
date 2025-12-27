@@ -3,6 +3,8 @@ package com.mrpanda.net.treesplus.world.tree.foliage.foliageplacer;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.mrpanda.net.treesplus.world.tree.foliage.ModFoliagePlacerTypes;
+import net.minecraft.block.BlockState;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.intprovider.IntProvider;
@@ -36,7 +38,7 @@ public class PalmFoliagePlacer extends FoliagePlacer {
                     if (x == 0 && z == 0) {
                         placer.placeBlock(pos, config.trunkProvider.get(random, pos));
                     } else {
-                        this.place(world, placer, random, config, pos);
+                        this.placeWithDistance(world, placer, random, config, pos, 1);
                     }
                 }
             }
@@ -55,14 +57,26 @@ public class PalmFoliagePlacer extends FoliagePlacer {
             if (d2 != null) mutable.move(d2);
             if (i <= 2) mutable.move(Direction.UP);
             if (i >= 4) mutable.move(Direction.DOWN);
-            this.place(world, placer, random, config, mutable);
-            if (i > 1) this.place(world, placer, random, config, mutable.down());
+
+
+            int dist = Math.min(i + 1, 6);
+
+            this.placeWithDistance(world, placer, random, config, mutable, dist);
+            if (i > 1) {
+                this.placeWithDistance(world, placer, random, config, mutable.down(), dist);
+            }
         }
     }
 
-    private void place(TestableWorld world, BlockPlacer placer, Random random, TreeFeatureConfig config, BlockPos pos) {
+    private void placeWithDistance(TestableWorld world, BlockPlacer placer, Random random, TreeFeatureConfig config, BlockPos pos, int distance) {
         if (world.testBlockState(pos, state -> state.isAir() || state.isOf(net.minecraft.block.Blocks.WATER))) {
-            placer.placeBlock(pos, config.foliageProvider.get(random, pos));
+            BlockState leafState = config.foliageProvider.get(random, pos);
+
+            if (leafState.contains(Properties.DISTANCE_1_7)) {
+                leafState = leafState.with(Properties.DISTANCE_1_7, distance);
+            }
+
+            placer.placeBlock(pos, leafState);
         }
     }
 
