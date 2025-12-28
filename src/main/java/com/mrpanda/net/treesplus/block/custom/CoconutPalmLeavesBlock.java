@@ -3,6 +3,9 @@ package com.mrpanda.net.treesplus.block.custom;
 import com.mrpanda.net.treesplus.block.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Waterloggable;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
@@ -17,15 +20,17 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 
-public class CoconutPalmLeavesBlock extends Block {
+public class CoconutPalmLeavesBlock extends Block implements Waterloggable {
     public static final IntProperty DISTANCE = Properties.DISTANCE_1_7;
     public static final BooleanProperty PERSISTENT = Properties.PERSISTENT;
+    public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
     public CoconutPalmLeavesBlock(Settings settings) {
         super(settings);
         this.setDefaultState(this.stateManager.getDefaultState()
                 .with(DISTANCE, 7)
-                .with(PERSISTENT, false));
+                .with(PERSISTENT, false)
+                .with(WATERLOGGED, false));
     }
 
     @Override
@@ -40,12 +45,21 @@ public class CoconutPalmLeavesBlock extends Block {
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(PERSISTENT, true).with(DISTANCE, 7);
+        FluidState fluidState = ctx.getWorld().getFluidState(ctx.getBlockPos());
+        return this.getDefaultState()
+                .with(PERSISTENT, true)
+                .with(DISTANCE, 7)
+                .with(WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
+    }
+
+    @Override
+    public FluidState getFluidState(BlockState state) {
+        return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
     }
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(DISTANCE, PERSISTENT);
+        builder.add(DISTANCE, PERSISTENT, WATERLOGGED);
     }
 
     @Override
@@ -76,10 +90,13 @@ public class CoconutPalmLeavesBlock extends Block {
 
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+        if (state.get(WATERLOGGED)) {
+            world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+        }
         if (!state.get(PERSISTENT)) {
             world.scheduleBlockTick(pos, this, 1 + world.getRandom().nextInt(3));
         }
-        return state;
+        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
 
     @Override
@@ -96,7 +113,6 @@ public class CoconutPalmLeavesBlock extends Block {
         for (Direction dir : Direction.values()) {
             if (world.getBlockState(pos.offset(dir)).isIn(BlockTags.LOGS)) return 1;
         }
-
         int minDistance = 7;
         BlockPos.Mutable mutable = new BlockPos.Mutable();
         for (int x = -1; x <= 1; x++) {
