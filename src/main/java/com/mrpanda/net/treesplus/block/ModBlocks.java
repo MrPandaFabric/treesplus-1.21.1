@@ -3,6 +3,7 @@ package com.mrpanda.net.treesplus.block;
 import com.mrpanda.net.treesplus.Treesplus;
 import com.mrpanda.net.treesplus.block.custom.CoconutBlock;
 import com.mrpanda.net.treesplus.block.custom.CoconutPalmLeavesBlock;
+import com.mrpanda.net.treesplus.block.custom.ModSaplingBlock;
 import com.mrpanda.net.treesplus.world.tree.ModSaplingGenerators;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;

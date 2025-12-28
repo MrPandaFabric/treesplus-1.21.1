@@ -2,22 +2,23 @@ package com.mrpanda.net.treesplus.world;
 
 import com.mrpanda.net.treesplus.Treesplus;
 import com.mrpanda.net.treesplus.block.ModBlocks;
-import com.mrpanda.net.treesplus.util.ModTags;
 import com.mrpanda.net.treesplus.world.tree.foliage.foliageplacer.PalmFoliagePlacer;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
-import net.minecraft.util.math.intprovider.IntProvider;
-import net.minecraft.util.math.intprovider.UniformIntProvider;
+import net.minecraft.world.gen.blockpredicate.BlockPredicate;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.treedecorator.AttachedToLeavesTreeDecorator;
 import net.minecraft.world.gen.trunk.BendingTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
-import net.minecraft.world.gen.trunk.TrunkPlacer;
+
+import java.util.List;
 
 public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> COCONUT_PALM_JUNGLE_KEY = registerKey("coconut_palm_jungle");
@@ -25,13 +26,23 @@ public class ModConfiguredFeatures {
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
 
+        AttachedToLeavesTreeDecorator coconutDecorator = new AttachedToLeavesTreeDecorator(
+                0.25f,
+                1,
+                0,
+                BlockStateProvider.of(ModBlocks.COCONUT),
+                1,
+                List.of(Direction.DOWN)
+        );
+
+
         register(context, COCONUT_PALM_JUNGLE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.PALM_LOG),
                 new StraightTrunkPlacer(9, 3, 1),
                 BlockStateProvider.of(ModBlocks.COCONUT_PALM_LEAVES),
                 new PalmFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(0)),
                 new TwoLayersFeatureSize(1, 0, 1)
-        ).ignoreVines().build());
+        ).decorators(List.of(coconutDecorator)).ignoreVines().build());
 
         register(context, COCONUT_PALM_BEACH_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.PALM_LOG),
@@ -39,7 +50,7 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.of(ModBlocks.COCONUT_PALM_LEAVES),
                 new PalmFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(0)),
                 new TwoLayersFeatureSize(1, 0, 1)
-        ).ignoreVines().build());
+        ).decorators(List.of(coconutDecorator)).ignoreVines().dirtProvider(BlockStateProvider.of(Blocks.SAND)).build());
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {
