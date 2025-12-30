@@ -1,8 +1,6 @@
 package com.mrpanda.net.treesplus.block.custom;
 
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
+import net.minecraft.block.*;
 import net.minecraft.entity.FallingBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResult;
@@ -18,26 +16,24 @@ public class CoconutBlock extends Block {
 
     @Override
     protected void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify) {
-        super.neighborUpdate(state, world, pos, sourceBlock, sourcePos, notify);
-        BlockPos above = pos.up();
-        if (world.isAir(above)) {
+        if (pos.up().equals(sourcePos) && world.isAir(pos.up()) && world.isAir(pos.down())) {
             dropCoconut(world, pos, state);
         }
     }
 
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        if (!world.isClient) {
+        if (!world.isClient && world.isAir(pos.down())) {
             dropCoconut(world, pos, state);
             return ActionResult.SUCCESS;
         }
-        return ActionResult.CONSUME;
+        return ActionResult.PASS;
     }
 
     private void dropCoconut(World world, BlockPos pos, BlockState state) {
-        FallingBlockEntity fallingBlockEntity = FallingBlockEntity.spawnFromBlock(world, pos, state);
-        fallingBlockEntity.setHurtEntities(2.0f, 40);
-        fallingBlockEntity.dropItem = true;
-        world.removeBlock(pos, false);
+        FallingBlockEntity entity = FallingBlockEntity.spawnFromBlock(world, pos, state);
+        entity.setHurtEntities(2.0f, 40);
+        entity.dropItem = true;
+        world.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
     }
 }
